@@ -27,7 +27,6 @@
                                 <div class="form-check">
                                     <input
                                         type="checkbox"
-                                        value="1"
                                         class="form-check-input position-static"
                                         v-model="generalStore.currentEntity[showableFieldObject['name']]"
                                     />

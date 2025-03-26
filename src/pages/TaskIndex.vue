@@ -11,7 +11,7 @@
 
                     <div class="card-body">
                         <index-table-component
-                            :column-names="['title']"
+                            :column-names="['title', 'description']"
                             :has-actions="true"
                             :action-button-names="['edit', 'delete']"
                             :action-button-class-names="['btn-outline-primary', 'btn-outline-danger']"

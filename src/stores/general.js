@@ -29,7 +29,7 @@ export const useGeneralStore = defineStore('general', () => {
 
     const deletionWarningMessage = ref("Remember, You can't restore this item again !")
 
-    const API_URL = 'http://127.0.0.1:8000/api';
+    const API_URL = 'http://127.0.0.1:8000';
 
     /* getters */
     // const doubleCount = computed(() => count.value * 2)
@@ -51,7 +51,7 @@ export const useGeneralStore = defineStore('general', () => {
     }
 
     return {
-        loading, isSubmitted, isCreateMode, createOrEditModal, deleteConfirmationModal, currentIndexContents, assetSelectOptions, currentEntityName, currentEntity, currentEntityShowableFieldObjects, currentEntityRequiredFields, errors, deletionWarningMessage,
+        loading, isSubmitted, isCreateMode, createOrEditModal, deleteConfirmationModal, currentIndexContents, assetSelectOptions, currentEntityName, currentEntity, currentEntityShowableFieldObjects, currentEntityRequiredFields, errors, deletionWarningMessage, API_URL,
         showStoreForm, showContentEditForm, showContentDeleteConfirmationForm
     }
 })

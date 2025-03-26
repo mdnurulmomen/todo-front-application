@@ -11,7 +11,7 @@
 
                     <div class="card-body">
                         <index-table-component
-                            :column-names="['name', 'email']"
+                            :column-names="['name']"
                             :has-actions="false"
                         />
                     </div>
@@ -23,7 +23,7 @@
 
 <script setup>
 
-    import { onMounted, ref } from 'vue';
+    import { onMounted } from 'vue';
     import { useTaskStore } from '@/stores/task';
     import { useGeneralStore } from '@/stores/general';
 

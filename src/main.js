@@ -1,4 +1,6 @@
-import './assets/main.css'
+// import './assets/main.css'
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.vue'
 
@@ -22,25 +24,40 @@ Object.entries(globalComponents).forEach(([key, value]) => {
     app.component(componentNameInKebabForm, value.default)
 })
 
+/* Store */
+import { createPinia } from 'pinia'
+const pinia = createPinia()
+app.use(pinia)
+
 import router from './routes';      // exported default
 app.use(router);
 
 import axios from 'axios';
-// window.axios = axios;
+window.axios = axios;
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.defaults.headers.common['Accept'] = 'application/json';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
+
+// user store
+import { useUserStore } from './stores/user';
+const userStore = useUserStore();
+
+userStore.loadUserFromLocalStorage();
+userStore.loadTokenFromLocalStorage();
+
+axios.interceptors.request.use(config => {
+    const token = userStore.currentToken;
+    if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+});
 
 /* Global Helper-Functions */
 import { capitalizeEachWord } from './helpers';        // exported modules
 app.config.globalProperties.$helpers = {
     capitalizeEachWord
 }
-
-/* Store */
-import { createPinia } from 'pinia'
-const pinia = createPinia()
-app.use(pinia)
 
 app.mount('#app')

@@ -38,5 +38,9 @@ export const useUserStore = defineStore('user', {
           this.currentToken = tokenString || null;
         }
     },
+
+    logout() {
+      this.clearStorage();
+    }
   }
 });

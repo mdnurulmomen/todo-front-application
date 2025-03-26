@@ -1,21 +1,30 @@
 <template>
   <div v-if="userStore.isAuthenticated">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-white border-bottom">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">To Do App Logo</a>
-  
+        <RouterLink to="/" class="navbar-brand">
+          <img src="@/assets/logo.svg" alt="To Do App Logo" height="30" class="d-inline-block align-top" />
+        </RouterLink>
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
-              <a
+              <RouterLink
+                to="#"
                 class="nav-link dropdown-toggle"
-                href="#"
                 role="button"
                 data-bs-toggle="dropdown"
-                >{{ userStore.currentUser?.name || 'User' }}</a
               >
+                {{ userStore.currentUser?.name || 'User' }}
+              </RouterLink>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">Logout</a></li>
+                <li>
+                  <RouterLink
+                    class="dropdown-item"
+                    to="#"
+                    @click="logout"
+                  >Logout</RouterLink>
+                </li>
               </ul>
             </li>
           </ul>
@@ -41,7 +50,15 @@
 </template>
 
 <script setup>
+  import { useRouter } from 'vue-router';
   import { useUserStore } from '@/stores/user';
 
+  const router = useRouter();
   const userStore = useUserStore();
+
+  const logout = () => {
+    userStore.logout();
+    router.push('/login');
+    // window.location.reload();
+  };
 </script>

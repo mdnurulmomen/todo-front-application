@@ -15,13 +15,13 @@ Before you begin, ensure you have the following installed:
 
 ## Installation Steps
 
-**Clone the Repository:**
+1.  **Clone the Repository:**
     ```bash
     git clone git@github.com:mdnurulmomen/todo-front-application.git
     cd todo-front-application
     ```
 
-**Install Dependencies:**
+2.  **Install Dependencies:**
     * Using npm:
         ```bash
         npm install
@@ -29,8 +29,9 @@ Before you begin, ensure you have the following installed:
     * Using yarn:
         ```bash
         yarn install
+        ```
 
-**Run the Development Server:**
+3.  **Run the Development Server:**
     * Using npm:
         ```bash
         npm run dev
@@ -41,7 +42,7 @@ Before you begin, ensure you have the following installed:
         ```
     * This will start the development server. Open your browser and navigate to the URL displayed in the console (usually `http://localhost:5173`).
 
-**Build for Production (Optional):**
+4.  **Build for Production (Optional):**
     * To build the application for production, run:
         * Using npm:
             ```bash
@@ -52,5 +53,3 @@ Before you begin, ensure you have the following installed:
             yarn build
             ```
     * The built files will be located in the `dist` directory.
-
-

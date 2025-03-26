@@ -17,8 +17,8 @@ Before you begin, ensure you have the following installed:
 
 **Clone the Repository:**
     ```bash
-    git clone <your-repository-url>
-    cd <your-repository-directory>
+    git clone git@github.com:mdnurulmomen/todo-front-application.git
+    cd todo-front-application
     ```
 
 **Install Dependencies:**

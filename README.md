@@ -1,29 +1,56 @@
-# todo-frontend
+# Vue 3 To-Do App Installation Guide
 
-This template should help get you started developing with Vue 3 in Vite.
+This document provides instructions on how to install and run the Vue 3 To-Do application.
 
-## Recommended IDE Setup
+## Prerequisites
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Before you begin, ensure you have the following installed:
 
-## Customize configuration
+* **Node.js:** (version 16 or later recommended) - [Download Node.js](https://nodejs.org/)
+* **npm** (Node Package Manager) or **yarn** (Node Package Manager) - npm is installed with Node.js, and yarn can be installed separately.
+* **Vue CLI (Optional but recommended):**
+    ```bash
+    npm install -g @vue/cli
+    ```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Installation Steps
 
-## Project Setup
+**Clone the Repository:**
+    ```bash
+    git clone <your-repository-url>
+    cd <your-repository-directory>
+    ```
 
-```sh
-npm install
-```
+**Install Dependencies:**
+    * Using npm:
+        ```bash
+        npm install
+        ```
+    * Using yarn:
+        ```bash
+        yarn install
 
-### Compile and Hot-Reload for Development
+**Run the Development Server:**
+    * Using npm:
+        ```bash
+        npm run dev
+        ```
+    * Using yarn:
+        ```bash
+        yarn dev
+        ```
+    * This will start the development server. Open your browser and navigate to the URL displayed in the console (usually `http://localhost:5173`).
 
-```sh
-npm run dev
-```
+**Build for Production (Optional):**
+    * To build the application for production, run:
+        * Using npm:
+            ```bash
+            npm run build
+            ```
+        * Using yarn:
+            ```bash
+            yarn build
+            ```
+    * The built files will be located in the `dist` directory.
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
